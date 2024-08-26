@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url('blob:https://www.pexels.com/21ad41b9-feff-4c60-8f94-ffa4e7bc95fd');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your content here -->
+</body>
+</html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Sign Up</h1>
+        <form class="signup-form" onsubmit="handleSignUp(event)">
+            <div class="input-box">
+                <input type="text" id="username" name="username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="input-box">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" name="password" required>
+                <label for="password">Password</label>
+            </div>
+            <div class="input-box">
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <label for="confirm-password">Confirm Password</label>
+            </div>
+            <button type="submit" class="submit-button">Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Modal for success message -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <h2>Sign-up successfully!</h2>
+            <button id="ok-button" class="submit-button">login</button>
+        </div>
+    </div>
+
+    <script>
+        function handleSignUp(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Save user info to localStorage (simulate a sign-up process)
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+
+            // Show the modal with the success message
+            const modal = document.getElementById('success-modal');
+            modal.style.display = 'block';
+
+            // When the user clicks the OK button, redirect to the login page
+            document.getElementById('ok-button').onclick = function() {
+                window.location.href = 'login.html';
+            };
+        }
+    </script>
+</body>
+</html>
